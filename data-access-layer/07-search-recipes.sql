@@ -23,3 +23,6 @@
 
 
 -- YOUR CODE HERE
+SELECT id, title, updated
+FROM recipes
+WHERE UPPER(title) LIKE (UPPER($1));
