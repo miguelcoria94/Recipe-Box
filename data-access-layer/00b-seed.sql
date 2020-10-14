@@ -105,7 +105,16 @@ CREATE TABLE units_of_measure (
 -- | recipe_id          | INTEGER       | FK, NOT NULL |
 
 -- YOUR CODE HERE
-
+CREATE TABLE ingredients (
+  id SERIAL,
+  amount NUMERIC(5, 2) NOT NULL,
+  unit_of_measure_id INT NOT NULL,
+  food_stuff VARCHAR(500) NOT NULL,
+  recipe_id INT NOT NULL,
+  FOREIGN KEY (unit_of_measure_id) REFERENCES units_of_measure(id),
+  FOREIGN KEY (recipe_id) REFERENCES recipes(id),
+  PRIMARY KEY (id)
+);
 
 
 
